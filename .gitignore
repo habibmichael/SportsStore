@@ -6,4 +6,5 @@ jspm_packages
 bower_components
 aot/*
 dist/*
+.idea/*
 yarn.lock
