@@ -1,5 +1,5 @@
 ﻿import { Injectable } from "@angular/core";
-import { Product } from "../../pro-angular-2ed/Angular 2.0/07 - SportsStore/SportsStore/app/model/product.model";
+import { Product } from "./product.model";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/observable/from";
 
