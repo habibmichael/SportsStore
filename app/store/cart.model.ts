@@ -3,7 +3,7 @@
  */
 
 import { Injectable } from "@angular/core";
-import { Product } from "./product.model";
+import { Product } from "../model/product.model";
 
 @Injectable()
 export class Cart {
