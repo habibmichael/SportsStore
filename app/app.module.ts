@@ -26,6 +26,7 @@ import { StoreFirstGuard } from "./storeFirst.guard";
             },
             { path: "**", redirectTo: "/store"}
         ])],
+    providers: [StoreFirstGuard],
     declarations:[AppComponent],
     bootstrap:[AppComponent]
 })
