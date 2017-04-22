@@ -3,12 +3,12 @@
  */
 
 import { Component } from "@angular/core";
-import { Cart } from "./cart.model";
+import { Cart } from "../model/cart.model";
 
 @Component({
     selector: "cart-summary",
     moduleId:module.id,
-    templateUrl: "app/store/cartSummary.component.html"
+    templateUrl: "./cartSummary.component.html"
 })
 
 export class CartSummaryComponent{
