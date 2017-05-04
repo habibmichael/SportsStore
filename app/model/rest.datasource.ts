@@ -16,7 +16,7 @@ const PORT = 3500;
 @Injectable()
 export class RestDataSource{
     baseUrl:string;
-    auth_token = string;
+    auth_token :string;
 
     constructor(private http: Http){
         this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
@@ -38,6 +38,33 @@ export class RestDataSource{
         return this.sendRequest(RequestMethod.Get, "products");
     }
 
+    saveProduct(product: Product): Observable<Product> {
+        return this.sendRequest(RequestMethod.Post, "products",
+            product, true);
+    }
+
+    updateProduct(product): Observable<Product> {
+        return this.sendRequest(RequestMethod.Put, `products/${product.id}`,true);
+    }
+
+    deleteProduct(id: number): Observable<Product>{
+        return this.sendRequest(RequestMethod.Delete, `products/${id}`, null,true);
+    }
+
+    getOrders(): Observable<Order[]>{
+        return this.sendRequest(RequestMethod.Get,
+            "orders", null, true);
+    }
+
+    updateOrder(order: Order): Observable<Order> {
+        return this.sendRequest(RequestMethod.Put,
+            `orders/${order.id}`, order, true);
+    }
+
+    deleteOrder(id:number): Observable<Order> {
+        return this.sendRequest(RequestMethod.Get,
+            `orders/${id}`, null, true);
+    }
     saveOrder(order: Order): Observable<Order>{
         return this.sendRequest(RequestMethod.Post, "orders",order);
     }
